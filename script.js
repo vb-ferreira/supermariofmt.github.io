@@ -7,6 +7,10 @@ const mario = document.querySelector(".mario");
 const jump = () => {
     mario.classList.add("jump");
     
+    // Play jump sound
+    let jumpSound = document.getElementById("jumpSound");
+    jumpSound.play();
+    
     // Remove the class after jump
     setTimeout(() => {
         mario.classList.remove("jump")
@@ -57,6 +61,9 @@ const loop = setInterval(() => {
         clearInterval(scoreCounter);
         // Display game over image
         document.getElementById("gameOver").style.display = "block";
+        // Play death sound
+        let deathSound = document.getElementById("deathSound");
+        deathSound.play();
     }
     
 }, 10);
